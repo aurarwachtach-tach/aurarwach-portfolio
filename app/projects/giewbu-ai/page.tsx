@@ -16,7 +16,7 @@ export default function GiewbuProjectPage() {
       <header className="site-header">
         <a className="brand" href="/" aria-label="Back to portfolio home">AT<span>.</span></a>
         <a className="project-detail-back" href="/#projects">← BACK TO PROJECTS</a>
-        <a className="header-cta" href="/projects/giewbu-ai/GIEWBU-Project.pdf" target="_blank" rel="noreferrer">READ PDF <Arrow /></a>
+        <a className="header-cta" href="/projects/giewbu-ai/GIEWBU-Project-Redacted-v2.pdf" target="_blank" rel="noreferrer">READ PDF <Arrow /></a>
       </header>
 
       <section className="projects section project-detail-section">
@@ -80,7 +80,7 @@ export default function GiewbuProjectPage() {
               <strong>Best AI Prototype for Real-World Impact Award</strong>
               <span>Bangkok University</span>
             </div>
-            <a className="project-document" href="/projects/giewbu-ai/GIEWBU-Project.pdf" target="_blank" rel="noreferrer"><span>READ PROJECT<br />DOCUMENTATION</span><Arrow /></a>
+            <a className="project-document" href="/projects/giewbu-ai/GIEWBU-Project-Redacted-v2.pdf" target="_blank" rel="noreferrer"><span>READ PROJECT<br />DOCUMENTATION</span><Arrow /></a>
           </div>
         </article>
 
