@@ -201,16 +201,25 @@ h2 { font: 900 clamp(48px, 7vw, 100px)/.92 Arial, sans-serif; letter-spacing: -.
 .timeline h4 { margin: 0 0 14px; font-size: 12px; color: #64717a; }
 .timeline p { max-width: 660px; font-size: 13px; line-height: 1.8; color: #5e6a72; }
 
-.certificates { background: var(--cream); display: grid; grid-template-columns: .8fr 1.2fr; gap: 10vw; }
+.certificates { background: var(--cream); display: grid; grid-template-columns: .8fr minmax(0, 1.2fr); gap: 10vw; }
 .certificates h2 em { color: var(--navy); -webkit-text-stroke: 0; }
-.certificate-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; align-self: start; }
-.certificate-card { min-width: 0; padding: 14px; border: 1px solid var(--line); background: var(--paper); transition: transform .25s ease, box-shadow .25s ease; }
+.certificate-carousel { min-width: 0; align-self: start; }
+.certificate-controls { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 12px; }
+.certificate-controls > span { color: #53606a; font-size: 12px; }
+.certificate-navigation { display: flex; gap: 8px; }
+.certificate-navigation button { width: 44px; height: 44px; display: grid; place-items: center; border: 1px solid var(--navy); background: transparent; color: var(--navy); font: 700 22px/1 Arial, sans-serif; cursor: pointer; transition: background .2s, color .2s; }
+.certificate-navigation button:hover:not(:disabled) { background: var(--navy); color: white; }
+.certificate-navigation button:disabled { opacity: .3; cursor: default; }
+.certificate-navigation button:focus-visible, .certificate-grid:focus-visible { outline: 2px solid var(--navy); outline-offset: 3px; }
+.certificate-grid { display: grid; grid-auto-flow: column; grid-auto-columns: calc((100% - 18px) / 2); gap: 18px; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; padding: 6px 0 16px; scrollbar-width: thin; scrollbar-color: var(--navy) var(--line); }
+.certificate-card { min-width: 0; display: flex; flex-direction: column; padding: 14px; border: 1px solid var(--line); background: var(--paper); scroll-snap-align: start; transition: transform .25s ease, box-shadow .25s ease; }
+.certificate-card:focus-visible { outline: 2px solid var(--navy); outline-offset: -3px; }
 .certificate-card:hover { transform: translateY(-6px); box-shadow: 8px 10px 0 rgba(17,40,60,.12); }
 .certificate-preview { position: relative; width: 100%; aspect-ratio: 1.29; overflow: hidden; background: white; border: 1px solid rgba(17,40,60,.08); }
 .certificate-preview img { object-fit: contain; }
 .certificate-number { margin-top: 18px; color: var(--coral); font: 900 9px/1 Arial, sans-serif; letter-spacing: .13em; }
 .certificate-card h3 { min-height: 76px; margin: 12px 0 18px; font: 800 17px/1.45 Arial, sans-serif; }
-.certificate-meta { display: flex; flex-direction: column; gap: 5px; color: #6f797f; font-size: 10px; }
+.certificate-meta { display: flex; flex-direction: column; gap: 5px; margin-top: auto; color: #6f797f; font-size: 10px; }
 .certificate-link { display: flex; justify-content: space-between; margin-top: 20px; padding-top: 14px; border-top: 1px solid var(--line); font-size: 11px; font-weight: 900; }
 
 .experience { background: var(--paper); }
@@ -308,7 +317,7 @@ footer > a:last-child { color: white; font-weight: 800; }
   .project-footer { grid-template-columns: 1fr; }
   .project-footer > div { border-right: 0; border-bottom: 1px solid rgba(255,255,255,.18); }
   .project-document { grid-column: auto; }
-  .certificate-grid { margin-top: 15px; }
+  .certificate-grid { grid-auto-columns: 88%; }
   .experience-heading { grid-template-columns: 1fr; }
   .experience-heading h2 { grid-column: 1; }
   .experience-heading > p { max-width: 520px; }
@@ -329,7 +338,6 @@ footer > a:last-child { color: white; font-weight: 800; }
   .stats div:last-child { border-bottom: 0; }
   .timeline article { grid-template-columns: 1fr; }
   .contact .button { width: 100%; gap: 12px; overflow-wrap: anywhere; }
-  .certificate-grid { grid-template-columns: 1fr; }
   .certificate-card h3 { min-height: 0; }
   .project-team ul { grid-template-columns: 1fr; }
   .experience-heading { margin-bottom: 48px; }

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { CertificateCarousel } from "./CertificateCarousel";
 import { ContactCopyButton } from "./ContactCopyButton";
 
 const skills = [
@@ -158,10 +159,10 @@ export default function Home() {
           <div className="section-kicker">03 / CERTIFICATES</div>
           <h2>ALWAYS<br /><em>GROWING</em></h2>
         </div>
-        <div className="certificate-grid">
+        <CertificateCarousel>
           <a className="certificate-card" href="/certificates/oracle-ai-foundations.pdf" target="_blank" rel="noreferrer">
             <div className="certificate-preview">
-              <Image src="/certificates/oracle-ai-foundations.png" alt="Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate certificate" fill sizes="(max-width: 700px) 90vw, 35vw" />
+              <Image src="/certificates/oracle-ai-foundations.png" alt="Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate certificate" fill sizes="(max-width: 700px) 80vw, (max-width: 980px) 43vw, 26vw" />
             </div>
             <div className="certificate-number">01 / ORACLE UNIVERSITY</div>
             <h3>Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate</h3>
@@ -171,7 +172,7 @@ export default function Home() {
 
           <a className="certificate-card" href="/certificates/oracle-cx-process-essentials.pdf" target="_blank" rel="noreferrer">
             <div className="certificate-preview">
-              <Image src="/certificates/oracle-cx-process-essentials.png" alt="Oracle Fusion Cloud Applications CX Process Essentials Certified certificate" fill sizes="(max-width: 700px) 90vw, 35vw" />
+              <Image src="/certificates/oracle-cx-process-essentials.png" alt="Oracle Fusion Cloud Applications CX Process Essentials Certified certificate" fill sizes="(max-width: 700px) 80vw, (max-width: 980px) 43vw, 26vw" />
             </div>
             <div className="certificate-number">02 / ORACLE UNIVERSITY</div>
             <h3>Oracle Fusion Cloud Applications CX Process Essentials Certified - Rel 1</h3>
@@ -182,7 +183,7 @@ export default function Home() {
           {awsCertificates.map((certificate, index) => (
             <a className="certificate-card" href={certificate.image} target="_blank" rel="noreferrer" key={certificate.image}>
               <div className="certificate-preview">
-                <Image src={certificate.image} alt={`AWS Academy ${certificate.title} training badge`} fill sizes="(max-width: 430px) 90vw, (max-width: 980px) 43vw, 26vw" />
+                <Image src={certificate.image} alt={`AWS Academy ${certificate.title} training badge`} fill sizes="(max-width: 700px) 80vw, (max-width: 980px) 43vw, 26vw" />
               </div>
               <div className="certificate-number">0{index + 3} / AWS ACADEMY</div>
               <h3>AWS Academy {certificate.title}</h3>
@@ -190,7 +191,7 @@ export default function Home() {
               <span className="certificate-link">View Certificate <Arrow /></span>
             </a>
           ))}
-        </div>
+        </CertificateCarousel>
       </section>
 
       <section className="experience section" id="experience">
