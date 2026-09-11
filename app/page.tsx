@@ -20,6 +20,13 @@ const skills = [
   },
 ];
 
+const awsCertificates = [
+  { title: "Cloud Foundations", image: "/certificates/aws-cloud-foundations.png" },
+  { title: "Generative AI Foundations", image: "/certificates/aws-generative-ai-foundations.png" },
+  { title: "Machine Learning for Natural Language Processing", image: "/certificates/aws-machine-learning-nlp.png" },
+  { title: "Machine Learning Foundations", image: "/certificates/aws-machine-learning-foundations.png" },
+];
+
 function Arrow() {
   return <span aria-hidden="true">↗</span>;
 }
@@ -85,7 +92,7 @@ export default function Home() {
             <p>School of Information Technology and Innovation</p>
             <strong>Bangkok University</strong>
           </div>
-          <div className="gpa"><span>GPA</span><strong>3.09</strong></div>
+          <div className="gpa"><span>GPA</span><strong>3.07</strong></div>
         </article>
 
         <div className="combined-skills">
@@ -171,6 +178,18 @@ export default function Home() {
             <div className="certificate-meta"><span>Issued Dec 02, 2025</span><span>Oracle Certified Essentials</span></div>
             <span className="certificate-link">View Certificate <Arrow /></span>
           </a>
+
+          {awsCertificates.map((certificate, index) => (
+            <a className="certificate-card" href={certificate.image} target="_blank" rel="noreferrer" key={certificate.image}>
+              <div className="certificate-preview">
+                <Image src={certificate.image} alt={`AWS Academy ${certificate.title} training badge`} fill sizes="(max-width: 430px) 90vw, (max-width: 980px) 43vw, 26vw" />
+              </div>
+              <div className="certificate-number">0{index + 3} / AWS ACADEMY</div>
+              <h3>AWS Academy {certificate.title}</h3>
+              <div className="certificate-meta"><span>AWS Academy Graduate</span><span>Trained</span></div>
+              <span className="certificate-link">View Certificate <Arrow /></span>
+            </a>
+          ))}
         </div>
       </section>
 
